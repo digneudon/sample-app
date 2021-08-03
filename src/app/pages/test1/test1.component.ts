@@ -6,16 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test1.component.css']
 })
 export class Test1Component implements OnInit {
+  selectedItem: { id: number; name: string } = undefined;
+  selectedItem2: { id: number; name: string } = undefined;
 
-  selectedItem: number = 0;
-  selectedItem2: number = 0;
-
-  items: { id: number; name: string; }[] = [];
+  items: { id: number; name: string }[] = [];
 
   // 制御用(trueが非活性)
   isDisabledItem: boolean = true;
 
-  constructor(  ) { }
+  constructor() {}
 
   ngOnInit() {
     // 配列設定
@@ -25,11 +24,10 @@ export class Test1Component implements OnInit {
   }
 
   onChange() {
-    if (this.selectedItem != 0) {
+    if (this.selectedItem) {
       this.isDisabledItem = false;
     } else {
       this.isDisabledItem = true;
     }
   }
-
 }

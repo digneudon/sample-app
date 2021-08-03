@@ -2,12 +2,18 @@
 <div>
   <!-- ngModel -->
   <select [(ngModel)]="selectedItem" (change)="onChange()">
-    <option [value]="0"></option>
-    <option *ngFor="let item of items" [value]="item.id">{{item.name}}</option>
+    <option [value]=""></option>
+    <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
   </select>
 
   <select [(ngModel)]="selectedItem2" [disabled]="isDisabledItem">
-    <option [value]="0"></option>
-    <option *ngFor="let item of items" [value]="item.id">{{item.name}}</option>
+    <option [value]=""></option>
+    <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
   </select>
+</div>
+<div>
+  selectedItem: {{selectedItem?.id + '/' + selectedItem?.name}}
+</div>
+<div>
+  selectedItem2: {{selectedItem2?.id + '/' + selectedItem2?.name}}
 </div>
