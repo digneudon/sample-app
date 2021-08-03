@@ -1,0 +1,13 @@
+<p>test1 works!</p>
+<div>
+  <!-- ngModel -->
+  <select [(ngModel)]="selectedItem" (change)="onChange()">
+    <option [value]="0"></option>
+    <option *ngFor="let item of items" [value]="item.id">{{item.name}}</option>
+  </select>
+
+  <select [(ngModel)]="selectedItem2" [disabled]="isDisabledItem">
+    <option [value]="0"></option>
+    <option *ngFor="let item of items" [value]="item.id">{{item.name}}</option>
+  </select>
+</div>
